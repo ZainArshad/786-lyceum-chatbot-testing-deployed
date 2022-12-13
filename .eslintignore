@@ -1,0 +1,8 @@
+# .estlintignore file
+dist
+.next
+build
+node_modules/
+# dead code elimination
+src/mocks
+src/_pages

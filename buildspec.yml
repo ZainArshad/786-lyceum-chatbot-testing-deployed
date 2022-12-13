@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - ls
+
+  pre_build:
+    commands:
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS
+      - docker build -t $DOCKER_REPO:$DOCKER_TAG .
+      - docker push $DOCKER_REPO:$DOCKER_TAG
